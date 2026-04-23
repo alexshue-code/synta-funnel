@@ -207,7 +207,7 @@ function ReframeSection() {
       <div className="mx-auto max-w-5xl rounded-[34px] border border-black/7 bg-white px-8 py-14 shadow-[0_18px_50px_rgba(0,0,0,0.045)] md:px-14 md:py-16">
         <Eyebrow centered>The shift</Eyebrow>
         <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
-          You don't need <span style={{ color: ACCENT }}>more leads.</span><br className="hidden md:block" />You need to monetize what you <span style={{ color: ACCENT }}>already have.</span>
+          You don't need <span style={{ color: ACCENT }}>more leads.</span><br className="hidden md:block" />You need to monetize the patients you <span style={{ color: ACCENT }}>already have.</span>
         </h2>
       </div>
     </section>
