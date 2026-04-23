@@ -589,124 +589,111 @@ function SocialProofSection() {
 }
 
 function AuthoritySection() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.12 }
+      { threshold: 0.15 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const trustItems = [
-    {
-      title: "Compliance-first by design",
-      text: "HIPAA-conscious communication flows across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
-    },
-    {
-      title: "Built for regulated services",
-      text: "From injectables to hormone therapy and advanced treatments, everything is designed to work within real-world platform and industry constraints.",
-    },
-    {
-      title: "Designed for repeat-based revenue",
-      text: "Focused on retention, reactivation, and increasing patient lifetime value — not just generating new leads.",
-    },
-    {
-      title: "Built by operators in the space",
-      text: "Developed by teams working directly inside health and wellness businesses — not generic SaaS companies.",
-    },
+  const items = [
+    { label: "Compliance-first" },
+    { label: "Built for regulated services" },
+    { label: "Repeat-revenue focused" },
+    { label: "Built by operators" },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="px-6 py-20 md:px-10 md:py-28"
-      style={{ background: "linear-gradient(155deg, #F6F6F3 0%, #F0F0ED 100%)" }}
+      className="px-6 py-20 text-center md:px-10 md:py-24"
+      style={{ background: "linear-gradient(180deg, #F6F6F3 0%, #F2F2EF 100%)" }}
     >
-      <div className="mx-auto max-w-7xl grid gap-14 lg:grid-cols-2 lg:items-center">
+      <div className="mx-auto max-w-4xl">
 
-        {/* Left */}
+        {/* Top content */}
         <div
           style={{
             opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(16px)",
+            transform: visible ? "translateY(0)" : "translateY(12px)",
             transition: "opacity 0.6s ease, transform 0.6s ease",
           }}
         >
-          <Eyebrow>Built for clinics</Eyebrow>
-          <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
+          <Eyebrow centered>Built for clinics</Eyebrow>
+          <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
             We only work with aesthetic and wellness clinics.
           </h2>
-          <p className="mt-5 max-w-md text-base leading-7 text-black/62 md:text-lg">
-            Everything we build is designed around patient retention, follow-up, and real clinic operations — not generic marketing systems or one-size-fits-all tools.
-          </p>
-          <p className="mt-4 max-w-md text-sm leading-6 text-black/40 italic">
-            Built to operate where compliance, patient experience, and revenue all matter.
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-black/62 md:text-lg">
+            Everything is built around retention, follow-up, and real clinic operations — not generic marketing systems.
           </p>
         </div>
 
-        {/* Right */}
-        <div className="flex flex-col overflow-hidden rounded-[28px] border border-black/7 bg-white shadow-[0_14px_40px_rgba(0,0,0,0.04)]">
-          {trustItems.map((item, i) => (
-            <TrustItem
-              key={item.title}
-              item={item}
-              index={i}
-              total={trustItems.length}
-              isHovered={hoveredIndex === i}
-              isDimmed={hoveredIndex !== null && hoveredIndex !== i}
-              onHover={() => setHoveredIndex(i)}
-              onLeave={() => setHoveredIndex(null)}
-              visible={visible}
-            />
+        {/* Divider */}
+        <div className="mx-auto mt-12 h-px max-w-2xl bg-black/[0.07]" />
+
+        {/* Trust strip */}
+        <div className="mx-auto mt-0 grid grid-cols-2 md:grid-cols-4">
+          {items.map((item, i) => (
+            <TrustStripItem key={item.label} label={item.label} index={i} visible={visible} />
           ))}
         </div>
+
+        {/* Divider */}
+        <div className="mx-auto h-px max-w-2xl bg-black/[0.07]" />
+
+        {/* Anchor line */}
+        <p
+          className="mx-auto mt-8 max-w-lg text-sm leading-6 text-black/38 italic"
+          style={{
+            opacity: visible ? 1 : 0,
+            transition: "opacity 0.6s ease 0.55s",
+          }}
+        >
+          Built to operate where compliance, patient experience, and revenue all matter.
+        </p>
       </div>
     </section>
   );
 }
 
-function TrustItem({ item, index, total, isHovered, isDimmed, onHover, onLeave, visible }) {
+function TrustStripItem({ label, index, visible }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-      className="flex items-start gap-4 px-6 py-6 md:px-8"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex flex-col items-center gap-2 px-4 py-8"
       style={{
-        borderLeft: `3px solid rgba(1, 88, 188, ${isHovered ? 1 : 0})`,
-        background: isHovered ? "rgba(1, 88, 188, 0.03)" : "transparent",
-        borderBottom: index < total - 1 ? "1px solid rgba(0,0,0,0.07)" : "none",
-        transform: isHovered ? "translateY(-1px)" : "translateY(0)",
-        opacity: !visible ? 0 : isDimmed ? 0.78 : 1,
-        transition: "border-left-color 0.2s ease, background 0.2s ease, transform 0.2s ease, opacity 0.55s ease",
-        transitionDelay: !visible ? "0s" : `${0.18 + index * 0.07}s`,
+        opacity: !visible ? 0 : 1,
+        transform: !visible ? "translateY(8px)" : "scale(1.02)" && hovered ? "scale(1.02)" : "scale(1)",
+        transition: "opacity 0.5s ease, transform 0.25s ease",
+        transitionDelay: !visible ? "0s" : `${0.32 + index * 0.07}s`,
+        cursor: "default",
       }}
     >
       <div
-        className="mt-[6px] h-2 w-2 flex-shrink-0 rounded-full"
+        className="h-2 w-2 rounded-full"
         style={{
-          background: isHovered ? ACCENT : "rgba(1,88,188,0.38)",
-          transform: isHovered ? "scale(1.25)" : "scale(1)",
-          transition: "all 0.2s ease",
+          background: hovered ? ACCENT : "rgba(1,88,188,0.45)",
+          transform: hovered ? "scale(1.3)" : "scale(1)",
+          transition: "all 0.25s ease",
         }}
       />
-      <div>
-        <div
-          className="text-base font-semibold tracking-[-0.02em]"
-          style={{
-            color: isHovered ? "#000000" : "#111111",
-            fontWeight: isHovered ? 700 : 600,
-            transition: "all 0.2s ease",
-          }}
-        >
-          {item.title}
-        </div>
-        <p className="mt-1 text-sm leading-6 text-black/55">{item.text}</p>
-      </div>
+      <span
+        className="text-sm font-semibold tracking-[-0.01em]"
+        style={{
+          color: hovered ? ACCENT : "rgba(0,0,0,0.65)",
+          transition: "color 0.25s ease",
+        }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
