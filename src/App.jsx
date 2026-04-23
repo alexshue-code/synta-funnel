@@ -75,9 +75,9 @@ function HeroSection() {
           <SecondaryButton>See How It Works</SecondaryButton>
         </div>
         <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-[28px] border border-black/6 bg-white/80 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid-cols-3 md:p-5">
-          <HeroStat value="No ads" label="built around database monetization" />
-          <HeroStat value="90 days" label="done-for-you implementation" />
-          <HeroStat value="$30K+" label="additional revenue benchmark" />
+          <HeroStat value="No New Leads Needed" label="You're already sitting on untapped revenue inside your patient base" />
+          <HeroStat value="Live in 14 Days" label="We plug into your existing systems and start reactivating patients almost immediately" />
+          <HeroStat value="$30K+ Additional Revenue" label="From patients you're not currently converting or following up with" />
         </div>
       </div>
     </section>
