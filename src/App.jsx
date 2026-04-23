@@ -604,19 +604,19 @@ function AuthoritySection() {
   const items = [
     {
       label: "Compliance-first",
-      text: "HIPAA-conscious communication flows across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
+      text: "HIPAA-conscious communication across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
     },
     {
       label: "Built for regulated services",
-      text: "From injectables to hormone therapy and advanced treatments, everything is designed to work within real-world platform and industry constraints.",
+      text: "From injectables to hormone therapy, everything is designed to operate within real-world platform rules and industry constraints.",
     },
     {
       label: "Repeat-revenue focused",
-      text: "Focused on retention, reactivation, and increasing patient lifetime value — not just generating new leads.",
+      text: "Focused on retention, reactivation, and increasing patient lifetime value — not just generating one-time visits.",
     },
     {
       label: "Built by operators",
-      text: "Developed by teams working directly inside health and wellness businesses — not generic SaaS companies.",
+      text: "Developed by teams working inside health and wellness clinics — built from real workflows, not generic SaaS assumptions.",
     },
   ];
 
