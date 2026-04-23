@@ -606,7 +606,7 @@ function AuthoritySection() {
       text: "HIPAA-conscious communication across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
     },
     {
-      label: "Built for regulated services",
+      label: "Real clinic ready",
       text: "From injectables to hormone therapy, everything is designed to operate within real-world platform rules and industry constraints.",
     },
     {
