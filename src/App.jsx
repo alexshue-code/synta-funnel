@@ -637,7 +637,7 @@ function AuthoritySection() {
             transition: "opacity 0.6s ease, transform 0.6s ease",
           }}
         >
-          <Eyebrow centered>Built for clinics</Eyebrow>
+          <Eyebrow centered>For Aesthetic & Wellness Clinics</Eyebrow>
           <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
             We only work with aesthetic and wellness clinics.
           </h2>
