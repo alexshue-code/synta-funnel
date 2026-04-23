@@ -178,7 +178,7 @@ function ProblemIssueBlock({ issue, index, total }) {
         {index + 1}
       </div>
       <div>
-        <div className="text-base font-semibold tracking-[-0.02em] text-black">{issue.title}</div>
+        <div className="text-base font-semibold tracking-[-0.02em] text-black md:text-lg">{issue.title}</div>
         <p className="mt-1 text-sm leading-6 text-black/55">{issue.text}</p>
       </div>
     </div>
