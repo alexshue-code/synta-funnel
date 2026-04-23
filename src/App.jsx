@@ -75,7 +75,7 @@ function HeroSection() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <PrimaryButton>Check If You Qualify</PrimaryButton>
-          <SecondaryButton>See How It Works</SecondaryButton>
+          <a href="#revenue-calculator"><SecondaryButton>Calculate Your Lost Revenue</SecondaryButton></a>
         </div>
         <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-[28px] border border-black/6 bg-white/80 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid-cols-3 md:p-5">
           <HeroStat value="No New Leads Needed" label="You're already sitting on untapped revenue inside your patient base" />
@@ -639,7 +639,7 @@ function SyntaRevenueCalculator() {
   };
 
   return (
-    <section className="w-full bg-[#F3F3F0] px-6 py-14 md:px-10 md:py-20">
+    <section id="revenue-calculator" className="w-full bg-[#F3F3F0] px-6 py-14 md:px-10 md:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
           <div className="flex flex-col justify-between">
