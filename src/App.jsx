@@ -427,10 +427,6 @@ function OutcomeSection() {
           </div>
         </div>
 
-        <p className="mb-5 text-xs font-medium leading-6 text-black/50 md:mb-6 md:text-center md:text-sm">
-          Most clinics don't have a lead problem — they have a follow-up problem.
-        </p>
-
         <div className="grid gap-4 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
           <OutcomeMediaCard
             image={outcomeCards.primary.image}
