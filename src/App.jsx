@@ -392,40 +392,44 @@ function OutcomeSection() {
     primary: {
       image: OUTCOME_IMAGES.primary,
       metric: "+$10K–$20K",
-      title: "Additional monthly revenue",
+      title: "in additional monthly revenue",
       body: "Recovered through database monetization, reactivation, and recurring patient systems.",
     },
     communication: {
       image: OUTCOME_IMAGES.communication,
       metric: "No missed follow-up",
-      title: "Cleaner patient communication",
-      body: "Automated backend flows reduce manual drop-off and help staff stay consistent.",
+      title: "Every patient gets followed up",
+      body: "Automated outreach and reminders ensure no patient falls through the cracks.",
     },
     retention: {
       image: OUTCOME_IMAGES.retention,
       metric: "Higher retention",
-      title: "More repeat revenue",
-      body: "Memberships, loyalty, and better rebooking logic keep patients coming back.",
+      title: "More patients coming back monthly",
+      body: "Memberships, rebooking, and retention systems turn one-time visits into recurring revenue.",
     },
   };
 
   return (
     <section className="px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-5 flex items-end justify-between gap-6 md:mb-8">
+        <div className="mb-4 flex items-end justify-between gap-6 md:mb-5">
           <div className="max-w-2xl">
             <Eyebrow>What this looks like</Eyebrow>
             <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
               Outcomes your clinic can actually feel.
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-6 text-black/62 md:text-base">
-              Cleaner backend systems create visible revenue outcomes without touching ad spend.
+              No new ads. No extra staff. Just revenue from patients you already have.
             </p>
           </div>
           <div className="hidden md:block">
             <PrimaryButton>Apply this system to your clinic</PrimaryButton>
           </div>
         </div>
+
+        <p className="mb-5 text-xs font-medium leading-6 text-black/50 md:mb-6 md:text-center md:text-sm">
+          Most clinics don't have a lead problem — they have a follow-up problem.
+        </p>
 
         <div className="grid gap-4 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
           <OutcomeMediaCard
