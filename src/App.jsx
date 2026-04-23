@@ -115,7 +115,6 @@ function ProblemSection() {
   ];
 
   return (
-    <>
       <section className="px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
@@ -155,31 +154,8 @@ function ProblemSection() {
             </div>
           </div>
 
-          {/* Closing line */}
-          <div className="mt-16 text-center">
-            <p className="text-2xl font-semibold tracking-[-0.035em] text-black md:text-[32px]">
-              This is where your next <span style={{ color: ACCENT }}>$30K</span> is hiding.
-            </p>
-          </div>
         </div>
       </section>
-
-      {/* Video loop band */}
-      <div className="px-6 pb-20 md:px-10 md:pb-28">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[28px] border border-black/8 bg-black shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full object-cover"
-            style={{ maxHeight: "440px" }}
-          >
-            <source src="/videos/problem-loop.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </>
   );
 }
 
