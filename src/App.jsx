@@ -88,27 +88,98 @@ function HeroSection() {
 }
 
 function ProblemSection() {
-  return (
-    <section className="px-6 py-20 md:px-10 md:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <div>
-          <Eyebrow>In the real world</Eyebrow>
-          <h2 className="mt-4 max-w-md text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
-            You're already sitting on this revenue.
-          </h2>
-          <p className="mt-5 max-w-md text-base leading-7 text-black/62 md:text-lg">
-            Most clinics do not have a lead problem. They have a follow-up, retention, and reactivation problem.
-          </p>
-        </div>
+  const bullets = [
+    "Patients come in once and never hear from you again.",
+    "Follow-up is inconsistent.",
+    "Promotions are one-off.",
+    "There's no real system bringing people back.",
+  ];
 
-        <div className="grid gap-4 md:grid-cols-2">
-          <ProblemCard title="Inactive patients" body="Thousands of past patients who have not been contacted in months or years." />
-          <ProblemCard title="No structured retention" body="No memberships, loyalty loop, or systematic reason for patients to come back." />
-          <ProblemCard title="Revenue left behind" body="One-time visits instead of predictable recurring revenue inside the same database." />
-          <ProblemCard title="Staff inconsistency" body="Manual follow-up breaks under pressure, so revenue leaks every single week." />
+  const issues = [
+    {
+      title: "Inactive patients",
+      text: "Thousands of past patients sitting untouched for months — sometimes years.",
+    },
+    {
+      title: "Missed follow-up",
+      text: "Leads and patients fall through the cracks with no system to recover them.",
+    },
+    {
+      title: "No retention system",
+      text: "No memberships, no loyalty loops, no structured reason to come back.",
+    },
+    {
+      title: "Revenue left behind",
+      text: "One-time visits instead of predictable, recurring revenue from the same patients.",
+    },
+  ];
+
+  return (
+    <>
+      <section className="px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+
+            {/* Left column */}
+            <div>
+              <Eyebrow>In the real world</Eyebrow>
+              <h2 className="mt-4 max-w-md text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
+                You don't have a lead problem
+              </h2>
+              <p className="mt-5 max-w-md text-base leading-7 text-black/62 md:text-lg">
+                Most clinics are great at generating demand — but the money is lost in what happens after.
+              </p>
+              <div className="mt-7 flex flex-col gap-3">
+                {bullets.map((line) => (
+                  <div key={line} className="flex items-start gap-3">
+                    <div className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full" style={{ background: ACCENT }} />
+                    <p className="text-base leading-7 text-black/62">{line}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right column */}
+            <div className="flex flex-col divide-y divide-black/[0.07] rounded-[28px] border border-black/7 bg-white px-6 py-2 shadow-[0_14px_40px_rgba(0,0,0,0.04)] md:px-8">
+              {issues.map((issue, i) => (
+                <div key={issue.title} className="flex items-start gap-4 py-6">
+                  <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-[11px] font-semibold text-black/35">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <div className="text-base font-semibold tracking-[-0.02em] text-black">{issue.title}</div>
+                    <p className="mt-1 text-sm leading-6 text-black/55">{issue.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Closing line */}
+          <div className="mt-16 text-center">
+            <p className="text-2xl font-semibold tracking-[-0.035em] text-black md:text-[32px]">
+              This is where your next <span style={{ color: ACCENT }}>$30K</span> is hiding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Video loop band */}
+      <div className="px-6 pb-20 md:px-10 md:pb-28">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[28px] border border-black/8 bg-black shadow-[0_20px_60px_rgba(0,0,0,0.10)]">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full object-cover"
+            style={{ maxHeight: "440px" }}
+          >
+            <source src="/videos/problem-loop.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
