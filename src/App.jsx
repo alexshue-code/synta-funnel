@@ -895,12 +895,12 @@ function OutcomeMediaCard({ image, metric, title, body, large = false }) {
       <img src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.6),rgba(0,0,0,0.2)_50%,transparent)]" />
       <div className="relative z-10 flex h-full flex-col justify-end p-4 md:p-5">
-        <div className="max-w-md text-white">
+        <div className="rounded-[22px] border border-white/20 bg-[rgba(255,255,255,0.14)] p-5 shadow-[0_16px_40px_rgba(0,0,0,0.14)] backdrop-blur-xl md:p-6">
           <div className="text-3xl md:text-5xl font-semibold leading-[0.95] tracking-[-0.04em]">
             <span style={{ color: ACCENT }}>{metric}</span>
           </div>
           <div
-            className="mt-2 text-xl md:text-2xl font-semibold leading-[1.05] tracking-[-0.03em]"
+            className="mt-2 text-xl md:text-2xl font-semibold leading-[1.05] tracking-[-0.03em] text-white"
             dangerouslySetInnerHTML={{ __html: highlightWord(title) }}
           />
           <p
