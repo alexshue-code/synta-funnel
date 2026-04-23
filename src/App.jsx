@@ -612,12 +612,12 @@ function AuthoritySection() {
       text: "Built to work alongside the platforms, services, and workflows already used inside aesthetic and wellness clinics.",
     },
     {
-      label: "Repeat-revenue focused",
-      text: "Most clinics focus on getting the first visit — we focus on getting patients to come back.",
+      label: "Repeat revenue focus",
+      text: "Most clinics focus on getting the first visit — we focus on getting patients to return consistently over time.",
     },
     {
-      label: "Built for regulated markets",
-      text: "Developed through experience in compliance-heavy industries where messaging, data handling, and customer trust directly impact revenue.",
+      label: "Regulated market experience",
+      text: "Built through experience in compliance-heavy industries where messaging, data handling, and customer trust directly impact revenue.",
     },
   ];
 
