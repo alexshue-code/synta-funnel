@@ -29,9 +29,9 @@ export default function SyntaRetentionOfferFunnel() {
       <HeroSection />
       <ProblemSection />
       <ReframeSection />
+      <RevenueCalculatorSection />
       <MechanismSection />
       <SocialProofSection />
-      <RevenueCalculatorSection />
       <OutcomeSection />
       <OnboardingSection />
       <GuaranteeSection />
