@@ -921,7 +921,7 @@ function SyntaRevenueCalculator() {
             </video>
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.34),transparent_55%)]" />
             <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 md:bottom-8 md:left-8 md:right-8">
-              <div className="w-fit rounded-full bg-white/92 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-black/55 backdrop-blur">
+              <div className="w-fit rounded-full bg-[rgba(255,255,255,0.12)] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur border border-white/20">
                 Database monetization
               </div>
               <div className="max-w-lg text-2xl font-semibold leading-[1.02] tracking-[-0.04em] text-white md:text-4xl">
@@ -929,8 +929,7 @@ function SyntaRevenueCalculator() {
               </div>
               <div className="flex flex-wrap gap-2">
                 <Tag primary>Existing database only</Tag>
-                <Tag>Conservative defaults</Tag>
-                <Tag>No new leads</Tag>
+                <span className="rounded-full border border-white/25 bg-[rgba(255,255,255,0.12)] px-3 py-1 text-xs font-medium text-white backdrop-blur">Conservative defaults</span>
               </div>
             </div>
           </div>
