@@ -602,10 +602,22 @@ function AuthoritySection() {
   }, []);
 
   const items = [
-    { label: "Compliance-first" },
-    { label: "Built for regulated services" },
-    { label: "Repeat-revenue focused" },
-    { label: "Built by operators" },
+    {
+      label: "Compliance-first",
+      text: "HIPAA-conscious communication flows across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
+    },
+    {
+      label: "Built for regulated services",
+      text: "From injectables to hormone therapy and advanced treatments, everything is designed to work within real-world platform and industry constraints.",
+    },
+    {
+      label: "Repeat-revenue focused",
+      text: "Focused on retention, reactivation, and increasing patient lifetime value — not just generating new leads.",
+    },
+    {
+      label: "Built by operators",
+      text: "Developed by teams working directly inside health and wellness businesses — not generic SaaS companies.",
+    },
   ];
 
   return (
@@ -636,15 +648,12 @@ function AuthoritySection() {
         {/* Divider */}
         <div className="mx-auto mt-12 h-px max-w-2xl bg-black/[0.07]" />
 
-        {/* Trust strip */}
-        <div className="mx-auto mt-0 grid grid-cols-2 md:grid-cols-4">
+        {/* Trust cards */}
+        <div className="mx-auto mt-0 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
           {items.map((item, i) => (
-            <TrustStripItem key={item.label} label={item.label} index={i} visible={visible} />
+            <TrustCard key={item.label} label={item.label} text={item.text} index={i} visible={visible} />
           ))}
         </div>
-
-        {/* Divider */}
-        <div className="mx-auto h-px max-w-2xl bg-black/[0.07]" />
 
         {/* Anchor line */}
         <p
@@ -661,39 +670,41 @@ function AuthoritySection() {
   );
 }
 
-function TrustStripItem({ label, index, visible }) {
+function TrustCard({ label, text, index, visible }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex flex-col items-center gap-2 px-4 py-8"
+      className="rounded-2xl p-5"
       style={{
+        background: hovered ? "rgba(1,88,188,0.04)" : "rgba(0,0,0,0.035)",
+        borderLeft: `3px solid rgba(1,88,188,${hovered ? 1 : 0})`,
+        transform: hovered ? "translateY(-2px)" : "translateY(0)",
         opacity: !visible ? 0 : 1,
-        transform: !visible ? "translateY(8px)" : "scale(1.02)" && hovered ? "scale(1.02)" : "scale(1)",
-        transition: "opacity 0.5s ease, transform 0.25s ease",
-        transitionDelay: !visible ? "0s" : `${0.32 + index * 0.07}s`,
-        cursor: "default",
+        transition: "background 0.25s ease, border-left-color 0.25s ease, transform 0.25s ease, opacity 0.5s ease",
+        transitionDelay: !visible ? "0s" : `${0.28 + index * 0.07}s`,
       }}
     >
       <div
-        className="h-2 w-2 rounded-full"
+        className="mb-3 h-2 w-2 rounded-full"
         style={{
-          background: hovered ? ACCENT : "rgba(1,88,188,0.45)",
-          transform: hovered ? "scale(1.3)" : "scale(1)",
+          background: hovered ? ACCENT : "rgba(1,88,188,0.5)",
+          transform: hovered ? "scale(1.25)" : "scale(1)",
           transition: "all 0.25s ease",
         }}
       />
-      <span
+      <div
         className="text-sm font-semibold tracking-[-0.01em]"
         style={{
-          color: hovered ? ACCENT : "rgba(0,0,0,0.65)",
+          color: hovered ? "#000" : "#1a1a1a",
           transition: "color 0.25s ease",
         }}
       >
         {label}
-      </span>
+      </div>
+      <p className="mt-2 text-xs leading-5 text-black/50">{text}</p>
     </div>
   );
 }
