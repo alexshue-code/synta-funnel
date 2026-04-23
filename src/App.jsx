@@ -36,7 +36,6 @@ export default function SyntaRetentionOfferFunnel() {
       <AuthoritySection />
       <OnboardingSection />
       <GuaranteeSection />
-      <FinalCTASection />
     </div>
   );
 }
@@ -695,10 +694,10 @@ function TrustCard({ label, text, index, visible }) {
           transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
         }}
       >
-        <div className="text-sm font-semibold tracking-[-0.01em] text-black">
+        <div className="text-lg font-semibold tracking-[-0.03em] text-black">
           {label}
         </div>
-        <p className="mt-2 text-xs leading-[1.65] text-black/50">{text}</p>
+        <p className="mt-3 text-xs leading-[1.65] text-black/50">{text}</p>
       </div>
     </div>
   );
@@ -809,25 +808,6 @@ function GuaranteeSection() {
   );
 }
 
-function FinalCTASection() {
-  return (
-    <section className="px-6 pb-24 pt-12 text-center md:px-10 md:pb-28">
-      <div className="mx-auto max-w-4xl">
-        <Eyebrow centered>Next step</Eyebrow>
-        <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-          See what's already hiding inside your clinic.
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-black/62 md:text-lg">
-          Book a strategy call and we'll show you where the retention and recurring revenue opportunity actually lives.
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <PrimaryButton>Book your strategy call</PrimaryButton>
-          <SecondaryButton>Review the offer</SecondaryButton>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function SyntaRevenueCalculator() {
   const clinicTypes = {
