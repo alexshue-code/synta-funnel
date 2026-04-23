@@ -605,19 +605,19 @@ function AuthoritySection() {
   const items = [
     {
       label: "Compliance-first",
-      text: "HIPAA-conscious communication across SMS, email, and patient follow-up — structured to operate safely inside clinic environments.",
+      text: "HIPAA-conscious communication across SMS, email, and patient follow-up — structured to operate safely inside real clinic environments.",
     },
     {
-      label: "Real clinic ready",
-      text: "From injectables to hormone therapy, everything is designed to operate within real-world platform rules and industry constraints.",
+      label: "Clinic-ready systems",
+      text: "Built to work alongside the platforms, services, and workflows already used inside aesthetic and wellness clinics.",
     },
     {
       label: "Repeat-revenue focused",
-      text: "Focused on retention, reactivation, and increasing patient lifetime value — not just generating one-time visits.",
+      text: "Most clinics focus on getting the first visit — we focus on getting patients to come back.",
     },
     {
-      label: "Built by operators",
-      text: "Developed by teams working inside health and wellness clinics — built from real workflows, not generic SaaS assumptions.",
+      label: "Built for regulated markets",
+      text: "Developed through experience in compliance-heavy industries where messaging, data handling, and customer trust directly impact revenue.",
     },
   ];
 
@@ -642,7 +642,7 @@ function AuthoritySection() {
             We only work with aesthetic and wellness clinics.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-black/62 md:text-lg">
-            Everything is built around retention, follow-up, and real clinic operations — not generic marketing systems.
+            Built for clinics where compliance matters, follow-up can't break, and patient experience directly drives revenue.
           </p>
         </div>
 
