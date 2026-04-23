@@ -639,7 +639,7 @@ function SyntaRevenueCalculator() {
   };
 
   return (
-    <section className="w-full bg-[#F3F3F0] px-6 py-20 md:px-10 md:py-28">
+    <section className="w-full bg-[#F3F3F0] px-6 py-14 md:px-10 md:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-10">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
           <div className="flex flex-col justify-between">
@@ -653,7 +653,7 @@ function SyntaRevenueCalculator() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <ModeButton
                 active={clinicType === "aesthetics"}
                 onClick={() => setPreset("aesthetics")}
@@ -668,7 +668,7 @@ function SyntaRevenueCalculator() {
               />
             </div>
 
-            <div className="mt-8 rounded-3xl border border-black/8 bg-white p-5 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-6">
+            <div className="mt-5 rounded-3xl border border-black/8 bg-white p-5 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-6">
               <div className="mb-4 text-sm font-medium text-black/50">How this estimate works</div>
               <div className="grid gap-3 text-sm text-black/70">
                 <div className="rounded-2xl bg-black/[0.03] px-4 py-3">
