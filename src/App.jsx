@@ -58,25 +58,61 @@ function TopBar() {
   );
 }
 
+const fadeUp = (delay = 0) => ({
+  animation: `heroFadeUp 0.55s ease ${delay}s both`,
+});
+
 function HeroSection() {
+  const [headlineHovered, setHeadlineHovered] = useState(false);
+  const [ctaHovered, setCtaHovered] = useState(false);
+
   return (
     <section className="relative overflow-hidden px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
       <BackgroundArcs />
       <div className="mx-auto max-w-5xl text-center">
-        <Eyebrow>For Aesthetic & Wellness Clinics</Eyebrow>
-        <h1 className="mx-auto mt-5 max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] md:text-7xl lg:text-[88px]">
-          Add <span style={{ color: ACCENT }}>$30K+</span> From Patients You Already Have
+
+        <div style={fadeUp(0)}>
+          <Eyebrow>For Aesthetic & Wellness Clinics</Eyebrow>
+        </div>
+
+        <h1
+          className="mx-auto mt-5 max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] md:text-7xl lg:text-[88px]"
+          style={fadeUp(0.08)}
+          onMouseEnter={() => setHeadlineHovered(true)}
+          onMouseLeave={() => setHeadlineHovered(false)}
+        >
+          Add{" "}
+          <span style={{ color: headlineHovered ? "#2B7FFF" : ACCENT, transition: "color 0.4s ease" }}>
+            $30K+
+          </span>{" "}
+          From Patients You Already Have
         </h1>
-        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8">
+
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8" style={fadeUp(0.16)}>
           We install the systems that re-engage inactive patients, fix missed follow-up, and turn it into booked revenue.
         </p>
-        <p className="mx-auto mt-3 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8">
+        <p className="mx-auto mt-3 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8" style={fadeUp(0.16)}>
           — Add $30K+ in 90 days, or we keep working until you do.
         </p>
+
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <PrimaryButton>Check If You Qualify</PrimaryButton>
-          <a href="#revenue-calculator"><SecondaryButton>Calculate Your Lost Revenue</SecondaryButton></a>
+          <a
+            href="#revenue-calculator"
+            onMouseEnter={() => setCtaHovered(true)}
+            onMouseLeave={() => setCtaHovered(false)}
+            style={{
+              borderRadius: "0.75rem",
+              boxShadow: ctaHovered
+                ? "0 0 0 3px rgba(0,85,254,0.10), 0 8px 28px rgba(0,85,254,0.13)"
+                : "none",
+              transition: "box-shadow 0.2s ease",
+            }}
+          >
+            <SecondaryButton>Calculate Your Lost Revenue</SecondaryButton>
+          </a>
         </div>
+
         <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-[28px] border border-black/6 bg-white/80 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid-cols-3 md:p-5">
           <HeroStat value="No New Leads Needed" label="You're already sitting on untapped revenue inside your patient base" />
           <HeroStat value="Live in 14 Days" label="We plug into your existing systems and start reactivating patients within days" />
