@@ -267,7 +267,7 @@ function MechanismSection() {
       body: "Increase visit frequency through post-visit flows, loyalty systems, and structured rebooking.",
       media: SYSTEM_IMAGES.retention,
       bullets: ["Post-visit automation", "Rebooking prompts", "Loyalty + membership"],
-      metric: "$9,840 Retained Revenue",
+      metric: "$9,840 Recovered in 90 Days",
       metricSub: "Patient Follow-Up System"
     },
     recurring: {
@@ -322,7 +322,7 @@ function MechanismSection() {
               onClick={() => setActive("reactivation")}
               onHover={() => setActive("reactivation")}
               title="Reactivation System"
-              desc="Automatically bring inactive patients back with targeted outreach and timed follow-up."
+              desc="Bring inactive patients back automatically with targeted outreach and timed follow-up."
             />
             <SystemSelector
               active={active === "retention"}
@@ -350,7 +350,7 @@ function MechanismSection() {
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center gap-2">
-          <PrimaryButton>See How This Applies to Your Clinic</PrimaryButton>
+          <PrimaryButton>See How This Would Work in Your Clinic</PrimaryButton>
           <p className="text-xs text-black/38">Based on your current patient flow and missed follow-up</p>
         </div>
       </div>
