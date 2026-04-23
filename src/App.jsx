@@ -675,36 +675,31 @@ function TrustCard({ label, text, index, visible }) {
 
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="rounded-2xl p-5"
       style={{
-        background: hovered ? "rgba(1,88,188,0.04)" : "rgba(0,0,0,0.035)",
-        borderLeft: `3px solid rgba(1,88,188,${hovered ? 1 : 0})`,
-        transform: hovered ? "translateY(-2px)" : "translateY(0)",
-        opacity: !visible ? 0 : 1,
-        transition: "background 0.25s ease, border-left-color 0.25s ease, transform 0.25s ease, opacity 0.5s ease",
-        transitionDelay: !visible ? "0s" : `${0.28 + index * 0.07}s`,
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.5s ease",
+        transitionDelay: visible ? `${0.28 + index * 0.07}s` : "0s",
       }}
     >
       <div
-        className="mb-3 h-2 w-2 rounded-full"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="rounded-2xl p-5"
         style={{
-          background: hovered ? ACCENT : "rgba(1,88,188,0.5)",
-          transform: hovered ? "scale(1.25)" : "scale(1)",
-          transition: "all 0.25s ease",
-        }}
-      />
-      <div
-        className="text-sm font-semibold tracking-[-0.01em]"
-        style={{
-          color: hovered ? "#000" : "#1a1a1a",
-          transition: "color 0.25s ease",
+          background: "white",
+          border: `1px solid ${hovered ? "rgba(1,88,188,0.28)" : "rgba(0,0,0,0.08)"}`,
+          boxShadow: hovered
+            ? "0 14px 34px rgba(1,88,188,0.10)"
+            : "0 10px 30px rgba(0,0,0,0.04)",
+          transform: hovered ? "translateY(-2px)" : "translateY(0)",
+          transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
         }}
       >
-        {label}
+        <div className="text-sm font-semibold tracking-[-0.01em] text-black">
+          {label}
+        </div>
+        <p className="mt-2 text-xs leading-[1.65] text-black/50">{text}</p>
       </div>
-      <p className="mt-2 text-xs leading-5 text-black/50">{text}</p>
     </div>
   );
 }
