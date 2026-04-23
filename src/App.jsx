@@ -24,7 +24,7 @@ const OUTCOME_IMAGES = {
 
 export default function SyntaRetentionOfferFunnel() {
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[#111111]" style={{ ["--bg"]: BG }}>
+    <div className="min-h-screen overflow-x-hidden bg-[var(--bg)] text-[#111111]" style={{ ["--bg"]: BG }}>
       <TopBar />
       <HeroSection />
       <ProblemSection />
@@ -115,7 +115,7 @@ function HeroSection() {
           </a>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-2 rounded-[28px] border border-black/6 bg-white/80 p-3 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:gap-4 md:p-5">
+        <div className="mx-auto mt-8 hidden max-w-4xl grid-cols-3 gap-2 rounded-[28px] border border-black/6 bg-white/80 p-3 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid md:gap-4 md:p-5">
           <HeroStat value="No New Leads Needed" label="You're already sitting on untapped revenue inside your patient base" />
           <HeroStat value="Live in 14 Days" label="We plug into your existing systems and start reactivating patients within days" />
           <HeroStat value="$30K+ Additional Revenue" label="From patients you're not currently converting or following up with" />
@@ -312,7 +312,7 @@ function MechanismSection() {
               </div>
             </div>
 
-            <div className="absolute bottom-6 right-6 max-w-xs text-right text-white">
+            <div className="absolute bottom-6 right-6 max-w-xs text-right text-white hidden md:block">
               <div className="text-xl font-semibold tracking-[-0.03em]">{current.title}</div>
               <p className="mt-1 text-xs leading-5 text-white/80">{current.body}</p>
             </div>
@@ -567,7 +567,7 @@ function SocialProofSection() {
                     {activeItem.revenue}
                   </div>
                 </div>
-                <div className="rounded-[18px] border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white/75">
+                <div className="hidden md:block rounded-[18px] border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white/75">
                   {activeItem.clinic}
                 </div>
               </div>
@@ -764,7 +764,7 @@ function OnboardingStepCard({ step, title, body, tags }) {
 
   return (
     <div
-      className="rounded-[28px] border border-black/7 bg-white p-5 shadow-[0_14px_40px_rgba(0,0,0,0.045)] transition duration-300 hover:translate-y-[-2px]"
+      className="min-w-0 rounded-[28px] border border-black/7 bg-white p-5 shadow-[0_14px_40px_rgba(0,0,0,0.045)] transition duration-300 hover:translate-y-[-2px]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -1088,16 +1088,16 @@ function OutcomeMediaCard({ image, metric, title, body, large = false }) {
   if (!large) {
     return (
       <div
-        className="relative overflow-hidden rounded-[28px] min-h-[205px] shadow-[0_16px_42px_rgba(1,88,188,0.06)]"
+        className="relative overflow-hidden rounded-[28px] md:min-h-[205px] shadow-[0_16px_42px_rgba(1,88,188,0.06)]"
         style={{
           background: "linear-gradient(145deg, #ffffff 0%, rgba(1,88,188,0.04) 60%, rgba(1,88,188,0.08) 100%)",
           border: "1px solid rgba(1,88,188,0.12)",
         }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(1,88,188,0.07),transparent_65%)]" />
-        <div className="relative z-10 flex h-full flex-col justify-end p-5 md:p-6">
+        <div className="relative z-10 flex flex-col p-5 md:h-full md:justify-end md:p-6">
           <div className="max-w-md">
-            <div className="text-xl md:text-2xl font-semibold leading-[0.95] tracking-[-0.04em]" style={{ color: ACCENT }}>
+            <div className="text-2xl font-semibold leading-[0.95] tracking-[-0.04em]" style={{ color: ACCENT }}>
               {metric}
             </div>
             <div
