@@ -65,10 +65,10 @@ function HeroSection() {
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow>For Aesthetic & Wellness Clinics</Eyebrow>
         <h1 className="mx-auto mt-5 max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] md:text-7xl lg:text-[88px]">
-          Add <span style={{ color: ACCENT }}>$30K+</span> in new revenue from your existing patient database.
+          Add <span style={{ color: ACCENT }}>$30K+</span> From Patients You Already Have
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8">
-          In 90 days. No ads. No new lead generation. No extra hiring. Just better monetization of the patients you already paid to acquire.
+          We install the systems that re-engage inactive patients, fix missed follow-up, and turn it into booked revenue. Add $30K+ in 90 days, or we keep working until you do.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <PrimaryButton>See if you qualify</PrimaryButton>
