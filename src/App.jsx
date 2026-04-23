@@ -63,7 +63,7 @@ function HeroSection() {
     <section className="relative overflow-hidden px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
       <BackgroundArcs />
       <div className="mx-auto max-w-5xl text-center">
-        <Eyebrow>Clinic revenue systems</Eyebrow>
+        <Eyebrow>For Aesthetic & Wellness Clinics</Eyebrow>
         <h1 className="mx-auto mt-5 max-w-5xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] md:text-7xl lg:text-[88px]">
           Add <span style={{ color: ACCENT }}>$30K+</span> in new revenue from your existing patient database.
         </h1>
