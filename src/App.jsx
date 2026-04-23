@@ -139,23 +139,49 @@ function ProblemSection() {
             </div>
 
             {/* Right column */}
-            <div className="flex flex-col divide-y divide-black/[0.07] rounded-[28px] border border-black/7 bg-white px-6 py-2 shadow-[0_14px_40px_rgba(0,0,0,0.04)] md:px-8">
+            <div className="flex flex-col rounded-[28px] border border-black/7 bg-white shadow-[0_14px_40px_rgba(0,0,0,0.04)] overflow-hidden">
               {issues.map((issue, i) => (
-                <div key={issue.title} className="flex items-start gap-4 py-6">
-                  <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-[11px] font-semibold text-black/35">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <div className="text-base font-semibold tracking-[-0.02em] text-black">{issue.title}</div>
-                    <p className="mt-1 text-sm leading-6 text-black/55">{issue.text}</p>
-                  </div>
-                </div>
+                <ProblemIssueBlock key={issue.title} issue={issue} index={i} total={issues.length} />
               ))}
             </div>
           </div>
 
         </div>
       </section>
+  );
+}
+
+function ProblemIssueBlock({ issue, index, total }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-start gap-4 px-6 py-6 md:px-8"
+      style={{
+        borderLeft: hovered ? "3px solid #0055FE" : "3px solid transparent",
+        background: hovered ? "rgba(0, 85, 254, 0.03)" : "transparent",
+        borderBottom: index < total - 1 ? "1px solid rgba(0,0,0,0.07)" : "none",
+        transition: "all 0.2s ease",
+      }}
+    >
+      <div
+        className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border text-[11px] font-semibold"
+        style={{
+          color: hovered ? "#0055FE" : "rgba(0,0,0,0.35)",
+          borderColor: hovered ? "#0055FE" : "rgba(0,0,0,0.10)",
+          transform: hovered ? "scale(1.05)" : "scale(1)",
+          transition: "all 0.2s ease",
+        }}
+      >
+        {index + 1}
+      </div>
+      <div>
+        <div className="text-base font-semibold tracking-[-0.02em] text-black">{issue.title}</div>
+        <p className="mt-1 text-sm leading-6 text-black/55">{issue.text}</p>
+      </div>
+    </div>
   );
 }
 
