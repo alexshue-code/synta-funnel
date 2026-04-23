@@ -68,7 +68,7 @@ function HeroSection() {
           Add <span style={{ color: ACCENT }}>$30K+</span> From Patients You Already Have
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8">
-          We install the systems that re-engage inactive patients and fix missed follow-up to generate more booked appointments.
+          We install the systems that re-engage inactive patients, fix missed follow-up, and turn it into booked revenue.
         </p>
         <p className="mx-auto mt-3 max-w-3xl text-base leading-7 text-black/62 md:text-xl md:leading-8">
           — Add $30K+ in 90 days, or we keep working until you do.
