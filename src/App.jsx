@@ -88,6 +88,8 @@ function HeroSection() {
 }
 
 function ProblemSection() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const bullets = [
     "Patients come in once and never hear from you again.",
     "Follow-up is inconsistent.",
@@ -141,7 +143,16 @@ function ProblemSection() {
             {/* Right column */}
             <div className="flex flex-col rounded-[28px] border border-black/7 bg-white shadow-[0_14px_40px_rgba(0,0,0,0.04)] overflow-hidden">
               {issues.map((issue, i) => (
-                <ProblemIssueBlock key={issue.title} issue={issue} index={i} total={issues.length} />
+                <ProblemIssueBlock
+                  key={issue.title}
+                  issue={issue}
+                  index={i}
+                  total={issues.length}
+                  isHovered={hoveredIndex === i}
+                  isDimmed={hoveredIndex !== null && hoveredIndex !== i}
+                  onHover={() => setHoveredIndex(i)}
+                  onLeave={() => setHoveredIndex(null)}
+                />
               ))}
             </div>
           </div>
@@ -151,34 +162,39 @@ function ProblemSection() {
   );
 }
 
-function ProblemIssueBlock({ issue, index, total }) {
-  const [hovered, setHovered] = useState(false);
-
+function ProblemIssueBlock({ issue, index, total, isHovered, isDimmed, onHover, onLeave }) {
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
       className="flex items-start gap-4 px-6 py-6 md:px-8"
       style={{
-        borderLeft: hovered ? "3px solid #0055FE" : "3px solid transparent",
-        background: hovered ? "rgba(0, 85, 254, 0.03)" : "transparent",
+        borderLeft: `3px solid rgba(0, 85, 254, ${isHovered ? 1 : 0})`,
+        background: isHovered ? "rgba(0, 85, 254, 0.03)" : "transparent",
         borderBottom: index < total - 1 ? "1px solid rgba(0,0,0,0.07)" : "none",
+        transform: isHovered ? "translateY(-1px)" : "translateY(0)",
+        opacity: isDimmed ? 0.72 : 1,
         transition: "all 0.2s ease",
       }}
     >
       <div
         className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border text-[11px] font-semibold"
         style={{
-          color: hovered ? "#0055FE" : "rgba(0,0,0,0.35)",
-          borderColor: hovered ? "#0055FE" : "rgba(0,0,0,0.10)",
-          transform: hovered ? "scale(1.05)" : "scale(1)",
+          color: isHovered ? "#0055FE" : "rgba(0,0,0,0.35)",
+          borderColor: isHovered ? "#0055FE" : "rgba(0,0,0,0.10)",
+          transform: isHovered ? "scale(1.05)" : "scale(1)",
           transition: "all 0.2s ease",
         }}
       >
         {index + 1}
       </div>
       <div>
-        <div className="text-base font-semibold tracking-[-0.02em] text-black md:text-lg">{issue.title}</div>
+        <div
+          className="text-base tracking-[-0.02em] text-black md:text-lg"
+          style={{ fontWeight: isHovered ? 700 : 600, transition: "font-weight 0.2s ease" }}
+        >
+          {issue.title}
+        </div>
         <p className="mt-1 text-sm leading-6 text-black/55">{issue.text}</p>
       </div>
     </div>
