@@ -71,8 +71,8 @@ function HeroSection() {
           We install the systems that re-engage inactive patients, fix missed follow-up, and turn it into booked revenue. Add $30K+ in 90 days, or we keep working until you do.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <PrimaryButton>See if you qualify</PrimaryButton>
-          <SecondaryButton>View how it works</SecondaryButton>
+          <PrimaryButton>Check If You Qualify</PrimaryButton>
+          <SecondaryButton>See How It Works</SecondaryButton>
         </div>
         <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-[28px] border border-black/6 bg-white/80 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid-cols-3 md:p-5">
           <HeroStat value="No ads" label="built around database monetization" />
