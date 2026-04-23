@@ -286,7 +286,6 @@ function MechanismSection() {
     <section className="px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
-          <p className="mb-4 text-sm text-black/40 tracking-[-0.01em]">This is exactly what we fix.</p>
           <Eyebrow centered>The system</Eyebrow>
           <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
             A system built to recover the revenue you're already losing.
