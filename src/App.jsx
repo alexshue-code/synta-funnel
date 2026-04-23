@@ -9,6 +9,13 @@ const SYSTEM_IMAGES = {
   recurring: "/images/clinic-recurring.png",
 };
 
+const SOCIAL_IMAGES = {
+  medspa: "/images/medspa-bg.png",
+  trt: "/images/trt-bg.png",
+  dental: "/images/dental-bg.png",
+  biohack: "/images/biohack-bg.png",
+};
+
 export default function SyntaRetentionOfferFunnel() {
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[#111111]" style={{ ["--bg"]: BG }}>
@@ -323,7 +330,7 @@ function SocialProofSection() {
       quote: "Reactivation filled two weeks of bookings from patients we already had.",
       owner: "Dr. Melissa Grant",
       role: "Owner",
-      image: "/images/medspa-bg.jpg",
+      image: SOCIAL_IMAGES.medspa,
     },
     {
       clinic: "Elevate Hormone Clinic",
@@ -331,7 +338,7 @@ function SocialProofSection() {
       quote: "Follow-up and subscriptions brought back consistent monthly revenue without ads.",
       owner: "Jason Miller",
       role: "Owner",
-      image: "/images/trt-bg.jpg",
+      image: SOCIAL_IMAGES.trt,
     },
     {
       clinic: "Luxe Smile Studio",
@@ -339,7 +346,7 @@ function SocialProofSection() {
       quote: "Targeted campaigns filled our schedule and created unexpected upsell revenue.",
       owner: "Dr. Anthony Reyes",
       role: "Owner",
-      image: "/images/dental-bg.jpg",
+      image: SOCIAL_IMAGES.dental,
     },
     {
       clinic: "Nova Biohacking Lab",
@@ -347,7 +354,7 @@ function SocialProofSection() {
       quote: "Membership rollout gave us predictable revenue and reactivated lost clients.",
       owner: "Sarah Kim",
       role: "Founder",
-      image: "/images/biohack-bg.jpg",
+      image: SOCIAL_IMAGES.biohack,
     },
   ];
 
@@ -679,7 +686,7 @@ function SyntaRevenueCalculator() {
               muted
               loop
               playsInline
-              poster="/images/calculator-video-poster.jpg"
+              poster="/images/calculator-video-poster.png"
             >
               <source src="/videos/database-revenue.mp4" type="video/mp4" />
             </video>
