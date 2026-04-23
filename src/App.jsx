@@ -44,11 +44,8 @@ function TopBar() {
   return (
     <div className="sticky top-0 z-20 border-b border-black/5 bg-[rgba(247,247,245,0.85)] backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg border border-black/8 bg-white px-3 py-2 text-sm font-semibold tracking-[-0.03em] shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
-            SYNTA
-          </div>
-          <div className="hidden text-sm text-black/45 md:block">Retention Revenue Offer</div>
+        <div className="flex items-center">
+          <img src="/images/Synta-logo-clear.png" alt="SYNTA" className="h-8 w-auto" />
         </div>
         <button
           className="rounded-xl px-4 py-2 text-sm font-medium text-white shadow-[0_12px_32px_rgba(1,88,188,0.22)] transition hover:translate-y-[-1px]"
