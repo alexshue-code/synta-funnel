@@ -788,7 +788,7 @@ function HeroStat({ value, label }) {
   return (
     <div className="rounded-2xl border border-black/6 bg-white p-5 text-left overflow-hidden">
       <div className="truncate text-base font-semibold tracking-[-0.02em] text-black">{value}</div>
-      <div className="mt-1 text-[11px] leading-[1.45rem] text-black/50">{label}</div>
+      <div className="mt-1 text-xs leading-5 text-black/50">{label}</div>
     </div>
   );
 }
