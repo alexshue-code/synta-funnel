@@ -255,12 +255,12 @@ function MechanismSection() {
 
   const content = {
     reactivation: {
-      title: "Reactivation system",
-      body: "Bring inactive patients back through targeted offers, timed campaigns, and automated follow-up.",
+      title: "Reactivation System",
+      body: "Recover lost revenue by reactivating patients who haven't been back in months — automatically.",
       media: SYSTEM_IMAGES.reactivation,
       bullets: ["Lapsed patient campaigns", "SMS + email sequences", "Offer timing logic"],
-      metric: "$18,420 Generated",
-      metricSub: "Reactivation Campaign"
+      metric: "$18,420 Recovered in 90 Days",
+      metricSub: "Reactivation System"
     },
     retention: {
       title: "Retention system",
@@ -286,12 +286,13 @@ function MechanismSection() {
     <section className="px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
+          <p className="mb-4 text-sm text-black/40 tracking-[-0.01em]">This is exactly what we fix.</p>
           <Eyebrow centered>The system</Eyebrow>
           <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
-            A patient revenue system built for repeat-based clinics.
+            A system built to recover the revenue you're already losing.
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-black/62 md:text-lg">
-            Not software. Not dashboards. Real systems that run inside your clinic.
+            Not more tools. Not more dashboards. Systems that run inside your clinic and bring patients back automatically.
           </p>
         </div>
 
@@ -321,26 +322,26 @@ function MechanismSection() {
               active={active === "reactivation"}
               onClick={() => setActive("reactivation")}
               onHover={() => setActive("reactivation")}
-              title="Reactivation"
-              desc="Bring old patients back"
+              title="Reactivation System"
+              desc="Automatically bring inactive patients back with targeted outreach and timed follow-up."
             />
             <SystemSelector
               active={active === "retention"}
               onClick={() => setActive("retention")}
               onHover={() => setActive("retention")}
-              title="Retention"
-              desc="Increase return frequency"
+              title="Retention System"
+              desc="Turn one-time visits into repeat bookings through structured follow-up and rebooking flows."
             />
             <SystemSelector
               active={active === "recurring"}
               onClick={() => setActive("recurring")}
               onHover={() => setActive("recurring")}
-              title="Recurring"
-              desc="Create predictable revenue"
+              title="Recurring Revenue System"
+              desc="Introduce predictable, recurring revenue through memberships, loyalty, and ongoing care plans."
             />
 
             <div className="mt-4 rounded-2xl border border-black/8 bg-[#FAFAF8] p-5">
-              <div className="text-sm font-medium text-black/50">What this includes</div>
+              <div className="text-sm font-medium text-black/50">Built into this system</div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {current.bullets.map((b) => (
                   <Tag key={b} outlinedAccent>{b}</Tag>
@@ -349,8 +350,9 @@ function MechanismSection() {
             </div>
           </div>
         </div>
-        <div className="mt-8 flex justify-center">
-          <PrimaryButton>See what this would look like in your clinic</PrimaryButton>
+        <div className="mt-8 flex flex-col items-center gap-2">
+          <PrimaryButton>See How This Applies to Your Clinic</PrimaryButton>
+          <p className="text-xs text-black/38">Based on your current patient flow and missed follow-up</p>
         </div>
       </div>
     </section>
