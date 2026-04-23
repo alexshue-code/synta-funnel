@@ -862,21 +862,21 @@ function SyntaRevenueCalculator() {
   };
 
   return (
-    <section id="revenue-calculator" className="w-full bg-[#F3F3F0] px-6 py-14 md:px-10 md:py-20">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+    <section id="revenue-calculator" className="w-full bg-[#F3F3F0] px-6 py-10 md:px-10 md:py-14">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6">
+        <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
           <div className="flex flex-col justify-between">
             <div className="max-w-3xl">
               <Eyebrow>Revenue estimator</Eyebrow>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-[0.96] tracking-[-0.045em] md:text-6xl">
                 See what your existing patient database could be worth.
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-black/65 md:text-lg">
+              <p className="mt-3 max-w-xl text-base leading-7 text-black/65 md:text-lg">
                 A simple backend revenue model for wellness and aesthetic clinics. No ads. No new lead generation. Just revenue hiding inside the database you already built.
               </p>
             </div>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <ModeButton
                 active={clinicType === "aesthetics"}
                 onClick={() => setPreset("aesthetics")}
@@ -891,23 +891,23 @@ function SyntaRevenueCalculator() {
               />
             </div>
 
-            <div className="mt-5 rounded-3xl border border-black/8 bg-white p-5 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-6">
-              <div className="mb-4 text-sm font-medium text-black/50">How this estimate works</div>
-              <div className="grid gap-3 text-sm text-black/70">
-                <div className="rounded-2xl bg-black/[0.03] px-4 py-3">
+            <div className="mt-4 rounded-3xl border border-black/8 bg-white p-4 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-5">
+              <div className="mb-3 text-sm font-medium text-black/50">How this estimate works</div>
+              <div className="grid gap-2 text-sm text-black/70">
+                <div className="rounded-2xl bg-black/[0.03] px-3 py-2">
                   <span className="font-semibold text-black">Database size</span> × <span className="font-semibold text-black">reachable %</span> = reachable patients
                 </div>
-                <div className="rounded-2xl bg-black/[0.03] px-4 py-3">
+                <div className="rounded-2xl bg-black/[0.03] px-3 py-2">
                   Reachable patients × <span className="font-semibold text-black">reactivation %</span> = reactivated patients
                 </div>
-                <div className="rounded-2xl bg-black/[0.03] px-4 py-3">
+                <div className="rounded-2xl bg-black/[0.03] px-3 py-2">
                   Reactivated patients × <span className="font-semibold text-black">average value</span> = monthly revenue opportunity
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[32px] border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] min-h-[420px] lg:min-h-[100%]">
+          <div className="relative overflow-hidden rounded-[32px] border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] min-h-[320px] lg:min-h-[100%]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(1,88,188,0.08),transparent_38%)]" />
             <video
               className="h-full w-full object-cover"
@@ -935,7 +935,7 @@ function SyntaRevenueCalculator() {
           </div>
         </div>
 
-        <div className="w-full rounded-[28px] border border-black/8 bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.06)] md:p-7">
+        <div className="w-full rounded-[28px] border border-black/8 bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.06)] md:p-6">
           <div className="grid gap-5 md:grid-cols-2">
             <Field label="Patient database size" value={databaseSize} setValue={setDatabaseSize} min={250} max={50000} step={250} suffix=" patients" />
             <Field label="Reachable patients" value={reachablePct} setValue={setReachablePct} min={5} max={100} step={1} suffix="%" />
