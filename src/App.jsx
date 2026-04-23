@@ -291,7 +291,7 @@ function MechanismSection() {
             A system built to recover the revenue you're already losing.
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-black/62 md:text-lg">
-            Not more tools. Not more dashboards. Systems that run inside your clinic and bring patients back automatically.
+            Not more tools. Not more dashboards. Systems that run inside your clinic and bring patients back — automatically.
           </p>
         </div>
 
