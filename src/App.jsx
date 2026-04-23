@@ -16,6 +16,12 @@ const SOCIAL_IMAGES = {
   biohack: "/images/biohack-bg.png",
 };
 
+const OUTCOME_IMAGES = {
+  primary: "/images/outcome-revenue.png",
+  communication: "/images/outcome-communication.png",
+  retention: "/images/outcome-retention.png",
+};
+
 export default function SyntaRetentionOfferFunnel() {
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[#111111]" style={{ ["--bg"]: BG }}>
@@ -256,19 +262,19 @@ function RevenueCalculatorSection() {
 function OutcomeSection() {
   const outcomeCards = {
     primary: {
-      image: SYSTEM_IMAGES.reactivation,
+      image: OUTCOME_IMAGES.primary,
       metric: "+$10K–$20K",
       title: "Additional monthly revenue",
       body: "Recovered through database monetization, reactivation, and recurring patient systems.",
     },
     communication: {
-      image: SYSTEM_IMAGES.recurring,
+      image: OUTCOME_IMAGES.communication,
       metric: "No missed follow-up",
       title: "Cleaner patient communication",
       body: "Automated backend flows reduce manual drop-off and help staff stay consistent.",
     },
     retention: {
-      image: SYSTEM_IMAGES.retention,
+      image: OUTCOME_IMAGES.retention,
       metric: "Higher retention",
       title: "More repeat revenue",
       body: "Memberships, loyalty, and better rebooking logic keep patients coming back.",
@@ -855,24 +861,50 @@ function OutcomeMediaCard({ image, metric, title, body, large = false }) {
     return result;
   };
 
+  if (!large) {
+    return (
+      <div
+        className="relative overflow-hidden rounded-[28px] min-h-[205px] shadow-[0_16px_42px_rgba(1,88,188,0.06)]"
+        style={{
+          background: "linear-gradient(145deg, #ffffff 0%, rgba(1,88,188,0.04) 60%, rgba(1,88,188,0.08) 100%)",
+          border: "1px solid rgba(1,88,188,0.12)",
+        }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(1,88,188,0.07),transparent_65%)]" />
+        <div className="relative z-10 flex h-full flex-col justify-end p-5 md:p-6">
+          <div className="max-w-md">
+            <div className="text-xl md:text-2xl font-semibold leading-[0.95] tracking-[-0.04em]" style={{ color: ACCENT }}>
+              {metric}
+            </div>
+            <div
+              className="mt-2 text-base md:text-lg font-semibold leading-[1.05] tracking-[-0.03em] text-black"
+              dangerouslySetInnerHTML={{ __html: highlightWord(title) }}
+            />
+            <p
+              className="mt-2 max-w-sm text-[12px] md:text-sm leading-5 text-black/55"
+              dangerouslySetInnerHTML={{ __html: highlightWord(body) }}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={`relative overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_16px_42px_rgba(0,0,0,0.05)] ${large ? "min-h-[430px]" : "min-h-[205px]"}`}
-    >
+    <div className="relative overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_16px_42px_rgba(0,0,0,0.05)] min-h-[430px]">
       <img src={image} alt={title} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.6),rgba(0,0,0,0.2)_50%,transparent)]" />
-
       <div className="relative z-10 flex h-full flex-col justify-end p-4 md:p-5">
         <div className="max-w-md text-white">
-          <div className={`${large ? "text-3xl md:text-5xl" : "text-xl md:text-2xl"} font-semibold leading-[0.95] tracking-[-0.04em]`}>
+          <div className="text-3xl md:text-5xl font-semibold leading-[0.95] tracking-[-0.04em]">
             <span style={{ color: ACCENT }}>{metric}</span>
           </div>
           <div
-            className={`mt-2 ${large ? "text-xl md:text-2xl" : "text-base md:text-lg"} font-semibold leading-[1.05] tracking-[-0.03em]`}
+            className="mt-2 text-xl md:text-2xl font-semibold leading-[1.05] tracking-[-0.03em]"
             dangerouslySetInnerHTML={{ __html: highlightWord(title) }}
           />
           <p
-            className={`mt-2 max-w-sm ${large ? "text-xs md:text-sm" : "text-[12px] md:text-sm"} leading-5 text-white/85`}
+            className="mt-2 max-w-sm text-xs md:text-sm leading-5 text-white/85"
             dangerouslySetInnerHTML={{ __html: highlightWord(body) }}
           />
         </div>
