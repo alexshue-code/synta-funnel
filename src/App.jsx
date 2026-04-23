@@ -626,7 +626,7 @@ function AuthoritySection() {
       className="px-6 py-20 text-center md:px-10 md:py-24"
       style={{ background: "linear-gradient(180deg, #F6F6F3 0%, #F2F2EF 100%)" }}
     >
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
 
         {/* Top content */}
         <div
@@ -637,7 +637,7 @@ function AuthoritySection() {
           }}
         >
           <Eyebrow centered>Built for clinics</Eyebrow>
-          <h2 className="mx-auto mt-4 max-w-2xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
+          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
             We only work with aesthetic and wellness clinics.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-black/62 md:text-lg">
@@ -646,7 +646,7 @@ function AuthoritySection() {
         </div>
 
         {/* Divider */}
-        <div className="mx-auto mt-12 h-px max-w-2xl bg-black/[0.07]" />
+        <div className="mx-auto mt-12 h-px max-w-3xl bg-black/[0.07]" />
 
         {/* Trust cards */}
         <div className="mx-auto mt-0 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
