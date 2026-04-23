@@ -783,9 +783,9 @@ function Field({ label, value, setValue, min, max, step, prefix = "", suffix = "
 
 function HeroStat({ value, label }) {
   return (
-    <div className="rounded-2xl border border-black/6 bg-white p-5 text-left">
-      <div className="text-2xl font-semibold tracking-[-0.04em] text-black md:text-3xl">{value}</div>
-      <div className="mt-2 text-sm leading-6 text-black/50">{label}</div>
+    <div className="rounded-2xl border border-black/6 bg-white p-5 text-left overflow-hidden">
+      <div className="truncate text-sm font-semibold tracking-[-0.02em] text-black">{value}</div>
+      <div className="mt-1 truncate text-xs leading-5 text-black/50">{label}</div>
     </div>
   );
 }
