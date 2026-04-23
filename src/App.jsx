@@ -43,9 +43,9 @@ export default function SyntaRetentionOfferFunnel() {
 function TopBar() {
   return (
     <div className="sticky top-0 z-20 border-b border-black/5 bg-[rgba(247,247,245,0.85)] backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10 md:py-4">
         <div className="flex items-center">
-          <img src="/images/synta-logo-svg-englarged.svg" alt="SYNTA" className="h-16 w-auto" />
+          <img src="/images/synta-logo-svg-englarged.svg" alt="SYNTA" className="h-10 w-auto md:h-16" />
         </div>
         <button
           className="rounded-xl px-4 py-2 text-sm font-medium text-white shadow-[0_12px_32px_rgba(1,88,188,0.22)] transition hover:translate-y-[-1px]"
@@ -67,7 +67,7 @@ function HeroSection() {
   const [ctaHovered, setCtaHovered] = useState(false);
 
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
+    <section className="relative overflow-hidden px-6 pb-16 pt-12 md:px-10 md:pb-24 md:pt-20">
       <BackgroundArcs />
       <div className="mx-auto max-w-5xl text-center">
 
@@ -113,7 +113,7 @@ function HeroSection() {
           </a>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-[28px] border border-black/6 bg-white/80 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:grid-cols-3 md:p-5">
+        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-3 gap-2 rounded-[28px] border border-black/6 bg-white/80 p-3 shadow-[0_18px_50px_rgba(0,0,0,0.05)] backdrop-blur md:gap-4 md:p-5">
           <HeroStat value="No New Leads Needed" label="You're already sitting on untapped revenue inside your patient base" />
           <HeroStat value="Live in 14 Days" label="We plug into your existing systems and start reactivating patients within days" />
           <HeroStat value="$30K+ Additional Revenue" label="From patients you're not currently converting or following up with" />
@@ -153,7 +153,7 @@ function ProblemSection() {
   ];
 
   return (
-      <section className="px-6 py-20 md:px-10 md:py-28">
+      <section className="px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
 
@@ -239,7 +239,7 @@ function ProblemIssueBlock({ issue, index, total, isHovered, isDimmed, onHover, 
 
 function ReframeSection() {
   return (
-    <section className="px-6 py-20 text-center md:px-10 md:py-24">
+    <section className="px-6 py-14 text-center md:px-10 md:py-20">
       <div className="mx-auto max-w-5xl rounded-[34px] border border-black/7 bg-white px-8 py-14 shadow-[0_18px_50px_rgba(0,0,0,0.045)] md:px-14 md:py-16">
         <Eyebrow centered>The shift</Eyebrow>
         <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
@@ -283,7 +283,7 @@ function MechanismSection() {
   const current = content[active];
 
   return (
-    <section className="px-6 py-20 md:px-10 md:py-28">
+    <section className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <Eyebrow centered>The system</Eyebrow>
@@ -296,7 +296,7 @@ function MechanismSection() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[32px] border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+          <div className="relative overflow-hidden rounded-[32px] border border-black/8 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] min-h-[260px] md:min-h-[420px]">
             <img src={current.media} alt="clinic system" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.4),transparent_60%)]" />
 
@@ -410,13 +410,13 @@ function OutcomeSection() {
   return (
     <section className="px-6 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 flex items-end justify-between gap-6">
+        <div className="mb-5 flex items-end justify-between gap-6 md:mb-8">
           <div className="max-w-2xl">
             <Eyebrow>What this looks like</Eyebrow>
             <h2 className="mt-4 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] md:text-6xl">
               Outcomes your clinic can actually feel.
             </h2>
-            <p className="mt-3 max-w-xl whitespace-nowrap text-sm leading-6 text-black/62 md:text-base">
+            <p className="mt-3 max-w-xl text-sm leading-6 text-black/62 md:text-base">
               Cleaner backend systems create visible revenue outcomes without touching ad spend.
             </p>
           </div>
@@ -512,7 +512,7 @@ function SocialProofSection() {
               </h2>
             </div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="mt-5 grid gap-3 md:mt-8 md:gap-4 md:grid-cols-2">
               {items.map((item, index) => (
                 <button
                   key={item.clinic}
@@ -549,7 +549,7 @@ function SocialProofSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] min-h-[560px] border border-black/8 bg-white shadow-[0_16px_42px_rgba(0,0,0,0.05)]">
+          <div className="relative overflow-hidden rounded-[30px] min-h-[340px] border border-black/8 bg-white shadow-[0_16px_42px_rgba(0,0,0,0.05)] md:min-h-[560px]">
             <img
               src={activeItem.image}
               alt={activeItem.clinic}
@@ -622,7 +622,7 @@ function AuthoritySection() {
   return (
     <section
       ref={sectionRef}
-      className="px-6 py-20 text-center md:px-10 md:py-24"
+      className="px-6 py-14 text-center md:px-10 md:py-20"
       style={{ background: "linear-gradient(180deg, #F6F6F3 0%, #F2F2EF 100%)" }}
     >
       <div className="mx-auto max-w-5xl">
@@ -705,7 +705,7 @@ function TrustCard({ label, text, index, visible }) {
 
 function OnboardingSection() {
   return (
-    <section className="px-6 py-20 md:px-10 md:py-28">
+    <section className="px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-2xl">
           <Eyebrow>Getting started</Eyebrow>
@@ -746,7 +746,7 @@ function OnboardingSection() {
                 We can install the same systems inside your clinic as a branded, owned stack to reduce software and agent costs.
               </p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
               <SecondaryButton>Visit our main website</SecondaryButton>
               <PrimaryButton>Schedule call</PrimaryButton>
             </div>
@@ -791,8 +791,8 @@ function OnboardingStepCard({ step, title, body, tags }) {
 
 function GuaranteeSection() {
   return (
-    <section className="px-6 py-20 md:px-10 md:py-28">
-      <div className="mx-auto max-w-6xl rounded-[36px] border border-[rgba(1,88,188,0.16)] bg-[rgba(1,88,188,0.045)] px-10 py-14 text-center shadow-[0_20px_60px_rgba(1,88,188,0.10)] md:px-16 md:py-16">
+    <section className="px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-6xl rounded-[36px] border border-[rgba(1,88,188,0.16)] bg-[rgba(1,88,188,0.045)] px-6 py-10 text-center shadow-[0_20px_60px_rgba(1,88,188,0.10)] md:px-16 md:py-16">
         <Eyebrow centered>Our Guarantee</Eyebrow>
         <h2 className="mt-4 text-[32px] font-semibold leading-[1.02] tracking-[-0.045em] md:text-[52px]">
           Generate <span style={{ color: ACCENT }}>$30K+</span> in new revenue in 90 days — or we keep working until you do.
@@ -1008,9 +1008,9 @@ function Field({ label, value, setValue, min, max, step, prefix = "", suffix = "
 
 function HeroStat({ value, label }) {
   return (
-    <div className="rounded-2xl border border-black/6 bg-white p-5 text-left overflow-hidden">
-      <div className="truncate text-base font-semibold tracking-[-0.02em] text-black">{value}</div>
-      <div className="mt-1 text-xs leading-5 text-black/50">{label}</div>
+    <div className="overflow-hidden rounded-2xl border border-black/6 bg-white p-3 text-left md:p-5">
+      <div className="truncate text-sm font-semibold tracking-[-0.02em] text-black md:text-base">{value}</div>
+      <div className="mt-1 hidden text-xs leading-5 text-black/50 md:block">{label}</div>
     </div>
   );
 }
